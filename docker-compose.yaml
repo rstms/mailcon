@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  mailcon:
+    image: mailcon
+    build:
+      context: mailcon
+    env_file: .env
+    volumes:
+      - ${PWD}/config:/home/admin
