@@ -1,6 +1,0 @@
-arrow
-click
-
-[test]
-pytest
-pytest-click
