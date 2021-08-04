@@ -1,7 +1,10 @@
 # mailserver administration
 
 config:
-	./configure
+	mct config
+
+create:
+	mct create
 
 install:
 	pip3 install -U -e .

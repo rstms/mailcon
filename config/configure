@@ -1,7 +1,0 @@
-#!/bin/bash
-cat ->~/.cloudsigma.conf <<EOF
-api_endpoint = https://${MAILCON_REGION}.cloudsigma.com/api/2.0/
-ws_endpoint = wss://direct.${MAILCON_REGION}.cloudsigma.com/websocket
-username = $MAILCON_USERNAME
-password = $MAILCON_PASSWORD
-EOF
