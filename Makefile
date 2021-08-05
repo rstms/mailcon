@@ -8,23 +8,26 @@ BUILD:=${DC} build ${BUILD_ARGS}
 ps:
 	@${DC} ps
 
-build:
+clean:
+	cd ${PROJECT}/src && make clean
+
+build: clean
 	${BUILD}
 
-rebuild: 
+rebuild: clean
 	${BUILD} --no-cache
 
 run:
-	${DC} run ${PROJECT}
+	${DC} run ${PROJECT} ${CMD}
+
+dev:
+	${DC} run -e DEVMODE=1 ${PROJECT}
 
 start:
 	${DC} up -d
 
 stop:
 	${DC} down --remove-orphans
-
-shell:
-	${DC} exec ${PROJECT} /bin/bash -l
 
 tail:
 	@${DC} logs --follow --tail="all" ${PROJECT}

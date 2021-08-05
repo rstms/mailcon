@@ -33,3 +33,5 @@ fi
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 export VISUAL=/usr/bin/vi
+
+. .venv/bin/activate

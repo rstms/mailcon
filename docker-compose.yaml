@@ -7,4 +7,5 @@ services:
       context: mailcon
     env_file: .env
     volumes:
-      - ${PWD}/src:/home/admin/src
+      - ${PWD}/mailcon/src:/home/admin/src
+      - ${PWD}/images:/home/admin/images

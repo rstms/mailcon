@@ -1,3 +1,12 @@
-#!/bin/sh
-#. ~/src/.venv/bin/activate
-#exec /bin/bash -l "$@"
+#!/bin/bash
+. ~/.venv/bin/activate
+if [ -v DEVMODE ]; then
+  echo "developer mode"
+  cd src/mct
+  make install
+  exec bash -l
+else
+  echo "run mode"
+  mct -c config >>~/config.log
+  exec mct "$@"
+fi
